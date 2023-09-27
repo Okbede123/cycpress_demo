@@ -16,6 +16,6 @@
     "@angular/core": "^16.1.5",
     "@angular/platform-browser-dynamic": "^16.1.5",
     "@cypress/xpath": "^2.0.3",
-    "cypress": "^12.17.1"
+    "cypress": "^12.17.4"
   }
 }
