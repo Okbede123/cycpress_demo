@@ -15,7 +15,9 @@
     "@angular/common": "^16.1.5",
     "@angular/core": "^16.1.5",
     "@angular/platform-browser-dynamic": "^16.1.5",
-    "@cypress/xpath": "^2.0.3",
-    "cypress": "^12.17.4"
+    "@cypress/xpath": "^2.0.3"
+  },
+  "dependencies": {
+    "cypress": "^13.2.0"
   }
 }
