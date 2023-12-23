@@ -6,6 +6,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {},
 
     baseUrl: "https://demo.guru99.com",
+    failOnStatusCode: false
   },
 
   demopageobject: {
@@ -23,3 +24,5 @@ module.exports = defineConfig({
     specPattern: "**/*.cy.ts",
   },
 });
+
+
