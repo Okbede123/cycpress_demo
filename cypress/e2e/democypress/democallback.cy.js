@@ -1,5 +1,5 @@
 describe.skip('template spec', ()=>{
-  it('passes', () => {
+  it('passes test', () => {
     cy.visit('https://example.cypress.io')
     var gettest = test1(3,()=>{
       return 4
