@@ -16,10 +16,11 @@ describe('handle auto switch window tab', () => {
     cy.xpath("//a[text()='Crop image without losing its quality']").should("be.visible").click()
     cy.xpath("//input[@value='Select Image']").should("be.visible")
     cy.wait(3000)
+    
   })
 })
-//pending, chưa handle đc
-describe.only('handle auto switch window', () => {
+
+describe('handle auto switch window', () => {
   it('passes testcase 2', () => {
     Cypress.on('uncaught:exception', (err, runnable) => {
       // returning false here prevents Cypress from
@@ -89,3 +90,38 @@ describe('Example to demonstrate the handling of new browser windows in cypress'
         })
   })
 })
+
+
+describe('handle auto switch window tab 2', () => {
+  it('passes testcase 2', () => {
+    Cypress.on('uncaught:exception', (err, runnable) => {
+      // returning false here prevents Cypress from
+      // failing the test
+      return false
+    })
+
+    cy.visit('https://www.encodedna.com/javascript/demo/open-new-window-using-javascript-method.htm')
+
+    // cy.wait(3000)
+    cy.window().then((win) => {
+      cy.stub(win, 'open', url => {
+          win.location.href = 'https://www.encodedna.com/2013/09/open-window-in-a-new-tab-using-javascript-window-open-demo.htm';
+      }).as("popup")
+  })
+      cy.xpath("//input[@value='Open window in a new tab']").click()
+  cy.get('@popup')
+      .should("be.called")
+  cy.get('h1')
+      .should('have.text', 'Window Opened in a New Tab')
+  cy.title().then((title) =>{
+    cy.log("title la " + title)
+  })
+    cy.get('h1').invoke('text').then((text) =>{
+        cy.log('text la '+ text)
+      })
+    
+  })
+})
+
+
+
